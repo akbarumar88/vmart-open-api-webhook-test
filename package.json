@@ -1,0 +1,27 @@
+{
+    "name": "vmart-open-api-webhook-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start:dev": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js",
+      "start": "node index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.1",
+      "express": "^4.18.1",
+      "moment": "^2.29.3",
+      "mysql": "^2.18.1",
+      "mysql2": "^2.3.3",
+      "request-ip": "^3.3.0"
+    },
+    "type": "module",
+    "devDependencies": {
+      "nodemon": "^2.0.16"
+    }
+  }
+  
