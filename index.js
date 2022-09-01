@@ -19,20 +19,27 @@ app.listen(PORT, () => {
   console.log("Server running on port " + PORT)
 })
 
-app.post("/webhook", async (req, res, next) => {
-    // console.log(req.query)
-    let tgl = moment().format("YYYY-MM-DD")
-    try {
-      console.log(`Params ${tgl}`, req.body)
-      res.json(req.body)
-    } catch (e) {
-      res.status(500)
-      res.json({
-        data: [],
-        pageCount: 0,
-        dataCount: 0,
-        errorMessage: e.message,
-        error: e,
-      })
-    }
+app.get("/", async (req, res, next) => {
+  // console.log(req.query)
+  res.json({
+    message: `Server running on Port: ${PORT}`,
   })
+})
+
+app.post("/webhook", async (req, res, next) => {
+  // console.log(req.query)
+  let tgl = moment().format("YYYY-MM-DD")
+  try {
+    console.log(`Params ${tgl}`, req.body)
+    res.json(req.body)
+  } catch (e) {
+    res.status(500)
+    res.json({
+      data: [],
+      pageCount: 0,
+      dataCount: 0,
+      errorMessage: e.message,
+      error: e,
+    })
+  }
+})
